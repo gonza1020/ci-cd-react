@@ -1,0 +1,13 @@
+name: Actions for ci/cd lifecycle
+on: [push]
+jobs:
+  jest:
+    name: Jest testing
+    runs-on: windows-latest
+    steps:
+      - name: Checkout code
+        uses: actions/Checkout@v2
+      -name: Install packages
+        run: npm ci
+      -name: Run tests
+        run: npm t
