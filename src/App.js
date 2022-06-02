@@ -9,7 +9,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>Hola mundo desde corrientes Argentina!</p>
-        <h3>Testing slack integration!</h3>
+        <h3>Testing slack integration!!</h3>
         <HelloWorld />
       </header>
     </div>
