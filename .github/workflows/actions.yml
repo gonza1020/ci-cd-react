@@ -10,9 +10,9 @@ jobs:
         uses: actions/Checkout@v2
       - name: Install packages
         run: npm ci
-      - name: Generate build
-        run: npm run build
       - name: Run tests
         run: npm t
+      - name: Generate build
+        run: npm run build
 
       
