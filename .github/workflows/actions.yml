@@ -19,3 +19,7 @@ jobs:
           CI: true
       - name: Run tests
         run: npm t
+      - name: Generate build
+        run: npm run build
+
+      
