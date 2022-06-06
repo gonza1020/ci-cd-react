@@ -9,15 +9,15 @@ jobs:
   jest:
     name: Jest testing
     runs-on: windows-latest
-    
+
     steps:
       - name: Checkout code
         uses: actions/Checkout@v2
       - name: Caching dependencies
         uses: actions/setup-node@v3
-          with:
-            node-version: 14
-            cache: 'npm'
+        with:
+          node-version: 14
+          cache: 'npm'
       - name: Install packages
         run: npm ci
         env:
@@ -26,5 +26,3 @@ jobs:
         run: npm t
       - name: Generate build
         run: npm run build
-
-      
