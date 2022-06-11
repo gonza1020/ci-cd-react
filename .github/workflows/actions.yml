@@ -8,18 +8,27 @@ on:
 jobs:
   jest:
     name: Jest testing
-    runs-on: windows-latest
-    
+    runs-on: ubuntu-latest
+
     steps:
       - name: Checkout code
         uses: actions/Checkout@v2
+      - name: Caching node-modules
+        id: cache-npm
+        uses: actions/cache@v3
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+
+
       - name: Install packages
         run: npm ci
-        env:
-          CI: true
+        
       - name: Run tests
         run: npm t
-      - name: Generate build
-        run: npm run build
-
-      
