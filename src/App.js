@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <p>Hola mundo desde corrientes Argentina!</p>
+        <p>Hola mundo desde corrientes Argentina!!</p>
         <h3>Testing slack integration!!</h3>
         <HelloWorld />
       </header>
